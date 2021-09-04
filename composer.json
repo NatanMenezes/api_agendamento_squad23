@@ -1,0 +1,35 @@
+{
+    "name": "squad23/agendamento",
+    "description": "Sistema de agendamento FCamara, criado pela squad 23 do Programa de Formação",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Natã Menezes",
+            "email": "natanmenezes31@gmail.com"
+        },
+        {
+            "name": "Matheus Honorato",
+            "email": "matheuswebmw@gmail.com"
+        },
+        {
+            "name": "Stefânio Soares Junior",
+            "email": "stefaniojr@live.com"
+        },
+        {
+            "name": "Ana Gabatelli",
+            "email": "al.gabatelli@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source/"
+        },
+        "files": [
+            "source/Config.php"
+        ]
+    },
+
+    "require": {
+        "coffeecode/datalayer": "1.1.2"
+    }
+}
