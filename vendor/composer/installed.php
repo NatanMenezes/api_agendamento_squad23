@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'f27602cee42f46f630e10f29c075ebaeeb74c82f',
     'name' => 'squad23/agendamento',
   ),
   'versions' => 
@@ -22,12 +22,12 @@
     ),
     'squad23/agendamento' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'f27602cee42f46f630e10f29c075ebaeeb74c82f',
     ),
   ),
 );
