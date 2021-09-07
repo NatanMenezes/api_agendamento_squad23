@@ -15,6 +15,6 @@ class Agendamentos extends DataLayer
      */
     public function __construct()
     {
-        parent::__construct("agendamentos", ['funcionario', 'data', 'local'], "id", false);
+        parent::__construct("agendamentos", ['id_funcionario', 'data', 'local'], "id", false);
     }
 }

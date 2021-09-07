@@ -1,6 +1,6 @@
 <?php
 
-namespace Source\CRUD;
+namespace Source\Controller;
 
 use Source\Models\Funcionarios;
 

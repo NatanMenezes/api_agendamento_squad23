@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 06-Set-2021 às 19:36
+-- Tempo de geração: 07-Set-2021 às 19:01
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -34,7 +34,20 @@ CREATE TABLE IF NOT EXISTS `agendamentos` (
   `data` varchar(20) COLLATE utf8_bin NOT NULL,
   `local` varchar(20) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Extraindo dados da tabela `agendamentos`
+--
+
+INSERT INTO `agendamentos` (`id`, `id_funcionario`, `data`, `local`) VALUES
+(1, 1, '24/09/2021 T', 'SP'),
+(2, 1, '25/09/2021 M', 'Santos'),
+(3, 2, '24/09/2021 T', 'SP'),
+(4, 3, '24/09/2021 T', 'SP'),
+(5, 4, '24/09/2021 M', 'SP'),
+(6, 2, '22/09/2021 M', 'Santos'),
+(7, 4, '24/09/2021 T', 'Santos');
 
 -- --------------------------------------------------------
 

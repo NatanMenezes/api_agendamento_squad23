@@ -3,7 +3,7 @@
 require "../../vendor/autoload.php";
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
-use Source\CRUD\Consultores;
+use Source\Controller\Consultores;
 
 if(isset($_POST['email']) && isset($_POST['senha']))
 {
@@ -12,8 +12,10 @@ if(isset($_POST['email']) && isset($_POST['senha']))
     if(!$verifica)
     {
         echo json_encode(["status"=>"invalido"]);
-    } else 
+    } else
     {
         echo json_encode(["status"=>"sucesso"]);
     }
+}else{
+    echo json_encode(["status"=>"invalido"]);
 };

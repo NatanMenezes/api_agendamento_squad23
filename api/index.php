@@ -2,6 +2,6 @@
 
 require "../vendor/autoload.php";
 
-use Source\CRUD\Consultores;
+use Source\Controller\Consultores;
 
 var_dump(Consultores::login("natanmenezes31@gmail.com", "AdMiNdOsIsTeMa"));
