@@ -2,15 +2,25 @@
 
 namespace Source\Controller;
 
-use Source\Models\Funcionarios;
+use Source\Models\Agendamentos;
 
 class Consultores
 {
     static function login($email, $senha)
     {
-        $funcionarios = new Funcionarios();
-        $funcionario = $funcionarios->find("email = :email AND senha = :senha", "email=$email&senha=$senha")->fetch();
-        return $funcionario;
+        $sql = "SELECT * FROM funcionarios WHERE email=? AND senha=?";
+
+        $stmt = Agendamentos::getConn()->prepare($sql);
+        $stmt->bindValue(1, $email);
+        $stmt->bindValue(2, $senha);
+        $stmt->execute();
+        
+        if($stmt->rowCount() > 0){
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $resultado;
+        }else{
+            return null;
+        }
 
     }
 }

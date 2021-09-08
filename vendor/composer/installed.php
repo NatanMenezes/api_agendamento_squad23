@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'eb3b601b5183a1eb1f78d1434977d9f6b2f1cde3',
+    'reference' => '44dcdcb7560283e7425ea8971f2b1d32a44b5090',
     'name' => 'squad23/agendamento',
   ),
   'versions' => 
@@ -27,7 +27,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'eb3b601b5183a1eb1f78d1434977d9f6b2f1cde3',
+      'reference' => '44dcdcb7560283e7425ea8971f2b1d32a44b5090',
     ),
   ),
 );
