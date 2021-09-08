@@ -23,4 +23,17 @@ class Consultores
         }
 
     }
+
+    static function lista()
+    {
+        $sql = "SELECT * FROM funcionarios";
+        $stmt = Agendamentos::getConn()->prepare($sql);
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $resultado;
+        }else{
+            return "Nada";
+        }
+    }
 }

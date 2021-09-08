@@ -8,7 +8,6 @@ class Agendamento
     {
         if(Agendamento::findAgendamento($id_funcionario, $data) == null)
         {
-            require_once( "../../../vendor/autoload.php");
             $sql = "INSERT INTO agendamentos (id_funcionario, data, estacao) VALUES (?,?,?)";
             $stmt = Agendamentos::getConn()->prepare($sql);
             $stmt->bindValue(1, $id_funcionario);
@@ -22,7 +21,6 @@ class Agendamento
 
     static function findByIdFuncionario($id_funcionario)
     {
-        require_once( "../../vendor/autoload.php");
         $sql = "SELECT * FROM agendamentos WHERE id_funcionario=?";
         $stmt = Agendamentos::getConn()->prepare($sql);
         $stmt->bindValue(1, $id_funcionario);
@@ -38,7 +36,6 @@ class Agendamento
 
     static function findAgendamento($id_funcionario, $data)
     {
-        require_once( "../../../vendor/autoload.php");
         $sql = "SELECT * FROM agendamentos WHERE id_funcionario=? AND data=?";
 
         $stmt = Agendamentos::getConn()->prepare($sql);
