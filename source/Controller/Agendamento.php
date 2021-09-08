@@ -51,4 +51,12 @@ class Agendamento
         }
     }
 
+    static function delete($id)
+    {
+        $sql = "DELETE FROM agendamentos WHERE id=?";
+        $stmt = Agendamentos::getConn()->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+    }
+
 }

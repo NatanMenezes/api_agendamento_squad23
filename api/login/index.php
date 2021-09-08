@@ -14,7 +14,8 @@ if(isset($_POST['email']) && isset($_POST['senha']))
         echo json_encode(["status"=>"invalido"]);
     } else
     {
-        echo json_encode(["status"=>"sucesso"]);
+        $nome = $verifica[0]['nome'];
+        echo json_encode(["status"=>"sucesso", "nome"=>$nome, "email"=>$_POST['email']]);
     }
 }else{
     echo json_encode(["status"=>"invalido"]);
