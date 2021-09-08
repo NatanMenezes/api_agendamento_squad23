@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'f27602cee42f46f630e10f29c075ebaeeb74c82f',
+    'reference' => 'eb3b601b5183a1eb1f78d1434977d9f6b2f1cde3',
     'name' => 'squad23/agendamento',
   ),
   'versions' => 
@@ -51,7 +51,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'f27602cee42f46f630e10f29c075ebaeeb74c82f',
+      'reference' => 'eb3b601b5183a1eb1f78d1434977d9f6b2f1cde3',
     ),
   ),
 );

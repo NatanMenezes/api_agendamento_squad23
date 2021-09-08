@@ -2,6 +2,6 @@
 
 require "../vendor/autoload.php";
 
-use Source\Controller\Consultores;
+use Source\Controller\Agendamentos;
 
-var_dump(Consultores::login("natanmenezes31@gmail.com", "AdMiNdOsIsTeMa"));
+var_dump(Agendamentos::create(3, "06/09/2021 T", "SP"));

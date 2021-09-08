@@ -1,20 +1,16 @@
 <?php 
 namespace Source\Models;
 
-use CoffeeCode\DataLayer\DataLayer;
-
-class Agendamentos extends DataLayer
+class Agendamentos
 {
-    /** PARÂMETROS ESPERADOS NA FUNÇÃO CONSTRUTORA
-     
-     * 1. nome da tabela (String)
-     * 2. campos obrigatórios (Array)
-     * 3. chave primária (String) __ Padrão = First
-     * 4. timestamps (Bool): informa se existe um campo de datetime __ Padrão = true
-     
-     */
-    public function __construct()
-    {
-        parent::__construct("agendamentos", ['id_funcionario', 'data', 'local'], "id", false);
+    private static $instance;
+
+    public static function getConn(){
+
+        if(!isset(self::$instance)){
+            self::$instance = new \PDO("mysql:host=localhost;dbname=sistema_agendamento;charset=utf8", "root", "");
+        }
+
+        return self::$instance;
     }
 }

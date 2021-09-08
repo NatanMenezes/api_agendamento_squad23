@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `agendamentos` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `id_funcionario` int(255) NOT NULL,
   `data` varchar(20) COLLATE utf8_bin NOT NULL,
-  `local` varchar(20) COLLATE utf8_bin NOT NULL,
+  `estacao` varchar(20) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `agendamentos` (
 -- Extraindo dados da tabela `agendamentos`
 --
 
-INSERT INTO `agendamentos` (`id`, `id_funcionario`, `data`, `local`) VALUES
+INSERT INTO `agendamentos` (`id`, `id_funcionario`, `data`, `estacao`) VALUES
 (1, 1, '24/09/2021 T', 'SP'),
 (2, 1, '25/09/2021 M', 'Santos'),
 (3, 2, '24/09/2021 T', 'SP'),
