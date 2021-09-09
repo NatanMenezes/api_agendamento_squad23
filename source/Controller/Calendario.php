@@ -1,67 +1,40 @@
 <?php
 
-	namespace Source\Controller;
-	
-	class Calendario{
+namespace Source\Controller;
+use Source\Models\Agendamentos;
+class Calendario
+{
 
-		 private $id = 0;
-		 private $data = null;
-		 private $local = null;
 
-		 public function setId(int $id ):void{
-		 	$this->id = $id;
-		 }
+    static function AllData()
+    {
+        $sql = "SELECT * FROM agendamentos";
+        $stmt = Agendamentos::getConn()->prepare($sql);
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $resultado;
+        }else{
+            return "Sem retorno";
+        }
+    }
+    
+    static function PegaAgendamentos($data, $local)
+    {
+        $sql = "SELECT * FROM agendamentos WHERE data=? AND local=?";
 
-		 public function getId() :int{
-		 	return $this->id;
-		 }
+        $stmt = Agendamentos::getConn()->prepare($sql);
+        $stmt->bindValue(1, $data);
+        $stmt->bindValue(2, $local);
+        $stmt->execute();
+        
+        if($stmt->rowCount() > 0){
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $resultado;
+        }else{
+            return null;
+        }
 
-		 public function setData(string $data):void{
-		 	$this->data = $data;
-		 }
+    }
 
-		 public function getData() :string{
-		 	return $this->data;
-		 }
-
-		 public function setLocal(string $local):void{
-		 	$this->local = $local;
-		 }
-
-		 public function getLocal() :string{
-		 	return $this->local;
-		 }
-
-		 /////
-
-		 private function connection() :\PDO {
-		 	return new \PDO ("mysql:host=localhost;dbname=sistema_agendamento", "root", "");
-		 }
-
-		 public function read() :array
-		 {
-		 	$con = $this->connection(); 
-
-		 	if ($this->getId() === 0){
-		 		$stmt = $con->prepare("SELECT * FROM agendamentos"); 
-
-		 		if($stmt->execute()){
-		 			return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-		 		}
-
-		 	}
-		 	else if ($this->getId() > 0){
-		 		$stmt = $con->prepare("SELECT * FROM agendamentos WHERE id = :_id");
-		 		$stmt->bindValue(":_id", $this->getId(), \PDO::PARAM_INT); // testar sem int
-		 		if ($stmt->execute()){
-		 			return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-		 		}
-		 		
-		 	}
-		 	return [];
-		 }
-
-		 
-	}	
-
-?>
+}
