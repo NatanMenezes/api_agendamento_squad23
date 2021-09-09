@@ -19,13 +19,13 @@ class Calendario
         }
     }
     
-    static function PegaAgendamentos($data, $local)
+    static function PegaAgendamentos($data, $estacao)
     {
-        $sql = "SELECT * FROM agendamentos WHERE data=? AND local=?";
+        $sql = "SELECT * FROM agendamentos WHERE data=? AND estacao=?";
 
         $stmt = Agendamentos::getConn()->prepare($sql);
         $stmt->bindValue(1, $data);
-        $stmt->bindValue(2, $local);
+        $stmt->bindValue(2, $estacao);
         $stmt->execute();
         
         if($stmt->rowCount() > 0){
