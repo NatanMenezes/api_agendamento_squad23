@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 07-Set-2021 às 19:01
+-- Tempo de geração: 09-Set-2021 às 18:18
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `agendamentos` (
   `data` varchar(20) COLLATE utf8_bin NOT NULL,
   `estacao` varchar(20) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `agendamentos`
@@ -47,7 +47,46 @@ INSERT INTO `agendamentos` (`id`, `id_funcionario`, `data`, `estacao`) VALUES
 (4, 3, '24/09/2021 T', 'SP'),
 (5, 4, '24/09/2021 M', 'SP'),
 (6, 2, '22/09/2021 M', 'Santos'),
-(7, 4, '24/09/2021 T', 'Santos');
+(7, 4, '24/09/2021 T', 'Santos'),
+(8, 5, '16/09/2021 T', 'SP'),
+(9, 4, '16/09/2021 T', 'SP'),
+(10, 1, '16/09/2021 T', 'SP'),
+(20, 4, '07/09/2021 T', 'SP'),
+(12, 2, '06/09/2021 T', 'SP'),
+(13, 3, '06/09/2021 T', 'SP'),
+(14, 1, '16/09/2021 T', 'SP'),
+(21, 1, '07/09/2021 T', 'SP'),
+(25, 9, '07/09/2021', 'Santos'),
+(22, 5, '07/09/2021 T', 'SP'),
+(19, 2, '07/09/2021 T', 'SP'),
+(23, 3, '07/09/2021 T', 'Santos'),
+(24, 9, '07/09/2021 T', 'Santos'),
+(26, 9, '0', 'Santos'),
+(29, 8, '07/09/2021 T', 'Santos'),
+(30, 8, '20/09/2021 T', 'Santos');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `config`
+--
+
+DROP TABLE IF EXISTS `config`;
+CREATE TABLE IF NOT EXISTS `config` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `campo` varchar(255) COLLATE utf8_bin NOT NULL,
+  `valor` int(5) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Extraindo dados da tabela `config`
+--
+
+INSERT INTO `config` (`id`, `campo`, `valor`) VALUES
+(1, 'regulamento', 40),
+(2, 'capacidade_SP', 600),
+(3, 'capacidade_Santos', 100);
 
 -- --------------------------------------------------------
 
