@@ -18,7 +18,7 @@
             $tarde = Calendario::PegaAgendamentos($datat, $_POST["estacao"] );
             $capacidade = Calendario::CapacidadeTotal($estacao);
             $regulamento = Calendario::Regulamento();
-
+            $x = (($capacidade*$regulamento)/100);
             if (!$tarde == null){
                 foreach ($tarde as $value) {
                     $totalt = $totalt+1;
@@ -31,11 +31,11 @@
                     
                 }
             }
-            $capacidadem = ($totalm*(($regulamento*$capacidade)/100));
-            $capacidadet = ($totalt*(($regulamento*$capacidade)/100));
+            $capacidadem = round((100*$totalm)/$x, 2);
+            $capacidadet = round((100*$totalt)/$x, 2);
 
 
-            echo json_encode(["Data"=>$data, "Estacao"=>$estacao, "Total Manha"=>$totalm, "Total Utilizado Capacidade Manha"=>$capacidadem, "Total Tarde"=>$totalt, "Total Utilizado Capacidade Tarde"=>$capacidadet."%"], JSON_UNESCAPED_SLASHES);
+            echo json_encode(["Data"=>$data, "Estacao"=>$estacao, "Agendados Manha"=>$totalm, "Capacidade Usada Manha"=>$capacidadem."%", "Agendados Tarde"=>$totalt, "Capacidade Usada Tarde"=>$capacidadet."%"], JSON_UNESCAPED_SLASHES);
 
 
             
