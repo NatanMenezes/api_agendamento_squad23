@@ -37,6 +37,38 @@ class Calendario
 
     }
 
+    static function CapacidadeTotal($estacao)
+    {
+        
+        if ($estacao == "SP"){
+            $sql = "SELECT valor FROM config WHERE campo=?";
+            $stmt = Agendamentos::getConn()->prepare($sql);
+            $stmt->bindValue(1, "capacidade_SP");
+            $stmt->execute();
+            return $stmt->fetch()[0];
+        }
+        if ($estacao == "Santos"){
+            $sql = "SELECT valor FROM config WHERE campo=?";
+            $stmt = Agendamentos::getConn()->prepare($sql);
+            $stmt->bindValue(1, "capacidade_Santos");
+            $stmt->execute();
+            return $stmt->fetch()[0];
+        }
+
     
+
+    }
+
+    static function Regulamento()
+    {
+        $sql = "SELECT valor FROM config WHERE campo=?";
+        $stmt = Agendamentos::getConn()->prepare($sql);
+        $stmt->bindValue(1, "regulamento");
+        $stmt->execute();
+        return $stmt->fetch()[0];
+
+    
+
+    }
 
 }
