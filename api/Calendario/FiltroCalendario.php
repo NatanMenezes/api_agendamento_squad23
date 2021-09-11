@@ -7,7 +7,8 @@ header("Access-Control-Allow-Headers: *");
 use Source\Controller\Calendario;
 use Source\Controller\Helpers;
 
-if (isset($_POST["data"]) && isset($_POST["estacao"])) {
+if (isset($_POST["data"]) && isset($_POST["estacao"])) 
+{
     $totalm = 0;
     $totalt = 0;
     $data = $_POST['data'];
