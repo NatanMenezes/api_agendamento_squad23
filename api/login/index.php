@@ -11,12 +11,13 @@ if(isset($_POST['email']) && isset($_POST['senha']))
 
     if(!$verifica)
     {
-        echo json_encode(["status"=>"invalido"]);
+        echo json_encode(["status"=>false, "message"=>"Login Inválido"]);
     } else
     {
         $nome = $verifica[0]['nome'];
-        echo json_encode(["status"=>"sucesso", "nome"=>$nome, "email"=>$_POST['email']]);
+        $id = $verifica[0]['id'];
+        echo json_encode(["status"=>true, "id"=>$id,"nome"=>$nome, "email"=>$_POST['email'], "message"=>"Sucesso no login"]);
     }
 }else{
-    echo json_encode(["status"=>"invalido"]);
+    echo json_encode(["status"=>false, "message"=>"Dados insuficientes"]);
 };
