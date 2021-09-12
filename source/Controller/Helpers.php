@@ -21,4 +21,16 @@ class Helpers
         }
         return $res;
     }
+
+    static function agendamentosPassados($arr)
+    {
+        $res = [];
+        foreach($arr as $el) {
+            $dataNovo = "".substr($el["data"], 6, 4)."-".substr($el["data"], 3, 2)."-".substr($el["data"], 0, 2)."";
+            $time = strtotime($dataNovo);
+            $hoje = time();
+            if($time>$hoje){array_push($res, $el);}
+        }
+        return $res;
+    }
 }
