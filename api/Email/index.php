@@ -35,8 +35,9 @@ if (isset($_POST["emails"]) && isset($_POST["funcionario"])) {
         $mail->Port = 587;
         $mail->setFrom('sistemafcalendar@gmail.com');
         $mail->isHTML(true);
-        $mail->Subject = ('Você recebeu um convite!');
-        $mail->Body = ($_POST["funcionario"] . ', convidou você para ir ao escritório');
+        $mail->Subject = ($_POST["funcionario"] . ', convidou você!');
+        $email_template = 'email_template.html';
+        $mail->Body = file_get_contents($email_template);
         $mail->AltBody = ($_POST["funcionario"] . ', convidou você para ir ao escritório');
 
         if ($mail->send()) {
