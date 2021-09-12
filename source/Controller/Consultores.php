@@ -36,4 +36,24 @@ class Consultores
             return "Nada";
         }
     }
+
+    static function create($nome, $email, $senha, $admin)
+    {
+        $sql = "INSERT INTO funcionarios (nome, email, senha, admin) VALUES (?,?,?,?)";
+        $stmt = Agendamentos::getConn()->prepare($sql);
+        $stmt->bindValue(1, $nome);
+        $stmt->bindValue(2, $email);
+        $stmt->bindValue(3, $senha);
+        $stmt->bindValue(4, $admin);
+        $stmt->execute();
+        return true;
+    }
+
+    static function delete($id)
+    {
+        $sql = "DELETE FROM funcionarios WHERE id=?";
+        $stmt = Agendamentos::getConn()->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+    }
 }
