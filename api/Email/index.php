@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -9,13 +10,18 @@ require_once("../../vendor/autoload.php");
 require '../../source/Controller/src/Exception.php';
 require '../../source/Controller/src/PHPMailer.php';
 require '../../source/Controller/src/SMTP.php';
+$email_template = file_get_contents('email_template.php');
 
-if (isset($_POST["emails"]) && isset($_POST["funcionario"])) {
+if (isset($_POST["emails"]) && isset($_POST["funcionario"]) && isset($_POST["data"])) {
     $mail = new PHPMailer(true);
+    // Substitui o % pela informação
+    $email_template = str_replace('%funcionario%', $_POST["funcionario"], $email_template);
+    $email_template = str_replace('%data%', $_POST["data"], $email_template);
     try {
         foreach (Email::PegaEmail($_POST["emails"]) as $value2) {
             $mail->AddAddress($value2);
         }
+        $funcionario = $_POST["funcionario"];
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->SMTPDebug  = 0;
         $mail->CharSet = 'UTF-8';
@@ -35,10 +41,9 @@ if (isset($_POST["emails"]) && isset($_POST["funcionario"])) {
         $mail->Port = 587;
         $mail->setFrom('sistemafcalendar@gmail.com');
         $mail->isHTML(true);
-        $mail->Subject = ($_POST["funcionario"] . ', convidou você!');
-        $email_template = 'email_template.html';
-        $mail->Body = file_get_contents($email_template);
-        $mail->AltBody = ($_POST["funcionario"] . ', convidou você para ir ao escritório');
+        $mail->Subject = ("FCalendar: " . $funcionario . " convidou você");
+        $mail->Body = ($email_template);
+        $mail->AltBody = ($funcionario . 'convidou você para ir ao escritório');
 
         if ($mail->send()) {
             echo 'Email enviado com sucesso';
