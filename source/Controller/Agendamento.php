@@ -30,7 +30,7 @@ class Agendamento
             $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             return $resultado;
         }else{
-            return "Nada";
+            return null;
         }
     }
 
