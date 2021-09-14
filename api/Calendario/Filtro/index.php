@@ -7,13 +7,14 @@ header("Access-Control-Allow-Headers: *");
 use Source\Controller\Calendario;
 use Source\Controller\Helpers;
 
-if (isset($_POST["data"]) && isset($_POST["estacao"])) {
+if (isset($_POST["data"]) && isset($_POST["estacao"]) && isset($_POST["turno"])) {
     $totalm = 0;
     $totalt = 0;
     $data = $_POST['data'];
     $estacao = $_POST['estacao'];
-    $datam = Helpers::juntarDataTurno($_POST['data'], "M");
-    $datat = Helpers::juntarDataTurno($_POST['data'], "T");
+    $turno = $_POST['turno'];
+    $datam = Helpers::juntarDataTurno($_POST['data'], "$turno");
+    $datat = Helpers::juntarDataTurno($_POST['data'], "$turno");
     $manha = Calendario::PegaAgendamentos($datam, $_POST["estacao"]);
     $tarde = Calendario::PegaAgendamentos($datat, $_POST["estacao"]);
     $capacidade = Calendario::CapacidadeTotal($estacao);
