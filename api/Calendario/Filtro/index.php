@@ -29,11 +29,11 @@ if (isset($_POST["data"]) && isset($_POST["estacao"])) {
             $totalm = $totalm + 1;
         }
     }
-    $capacidadem = round((100 * $totalm) / $x, 2);
-    $capacidadet = round((100 * $totalt) / $x, 2);
+    $capacidadem = round((100 * $totalm) / $x, 2) / 100;
+    $capacidadet = round((100 * $totalt) / $x, 2) / 100;
+    $capacidadeambos = $capacidadem + $capacidadet;
 
-
-    echo json_encode(["Data" => $data, "Estacao" => $estacao, "Agendados Manha" => $totalm, "Capacidade Usada Manha" => $capacidadem . "%", "Agendados Tarde" => $totalt, "Capacidade Usada Tarde" => $capacidadet . "%"], JSON_UNESCAPED_SLASHES);
+    echo json_encode(["Data" => $data, "Estacao" => $estacao, "Agendados_Manha" => $totalm, "Capacidade_Usada_Manha" => $capacidadem, "Agendados_Tarde" => $totalt, "Capacidade_Usada_Tarde" => $capacidadet, "Capacidade_Ambos" => $capacidadeambos], JSON_UNESCAPED_SLASHES);
 } else {
     echo json_encode(["message" => "Dados insuficientes"]);
 };
