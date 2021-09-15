@@ -1,0 +1,41 @@
+[33m36ad107[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m Flag de primeiro acesso
+[33m509b4a4[m Implementação do CRUD de Funcionarios
+[33mea567df[m Implementação do CRUD de Funcionarios
+[33m53fe6ec[m Criação do Readme dos agendamentos
+[33m5cd74fe[m Merge branch 'master' of https://github.com/NatanMenezes/api_agendamento_squad23
+[33m4f4791f[m Readme do login escrito
+[33meb867c1[m Merge branch 'master' of https://github.com/NatanMenezes/api_agendamento_squad23
+[33mbe7ccf7[m Implementação do template do e-mail
+[33m08558f5[m Criado o Readme.md
+[33mabb029d[m Controlando o retorno de agendamentos já passados
+[33mdf24de5[m Merge branch 'master' of https://github.com/NatanMenezes/api_agendamento_squad23
+[33ma878796[m Implementação do envio de e-mails
+[33md0147dc[m Ajustes no controlador de capacidade e no retorno do login
+[33m8deca80[m Ajustes no endpoint de login
+[33m0b3637a[m Pequenos ajustes no endpoint de login
+[33m5bc781c[m Criada pasta filtro e correção dos códigos
+[33m21a7b99[m Pequenas correções na indentação
+[33m0ae8e29[m Correção capacidade e exibição em porcentagem
+[33m812dd6a[m Exibir capacidade e regulamento
+[33m128c161[m Unificação da filtragem por data e turno
+[33m63ff734[m Filtragem por data e turno
+[33m404b905[m Merge branch 'master' of https://github.com/NatanMenezes/api_agendamento_squad23
+[33m9596bd3[m Ver todas datas e filtrar por data e turno
+[33mc2c8913[m Refeito o retorno de todos os agendamentos do calendário
+[33mafb9b76[m Ver e modificar a capacidade das estações de trabalho
+[33meb023f4[m Funcionalidade de ver e modificar o regulamento
+[33mb121c40[m Formatação do retorno de datas e turnos
+[33m08dd1f4[m Formatação de datas e adaptações
+[33m0f71461[m Merge branch 'master' of https://github.com/NatanMenezes/api_agendamento_squad23
+[33m61f863f[m Delete agendamento
+[33m6098a7d[m Retorno de todos os agendamentos
+[33m31ef992[m Lista de funcionarios
+[33m42a225d[m Login refatorado, removido o data layer, mudancas no retorno
+[33m44dcdcb[m[33m ([m[1;32mnew-branch[m[33m)[m Criadas as primeiras funcionalidades do agendamento
+[33meb3b601[m Alterações básicas no banco de dados e na nomenclatura de pastas
+[33m11bc665[m Criada a funcionalidade de login na API
+[33m6816955[m Controller de login criado
+[33m6710b5c[m Banco de Dados configurado
+[33mee54018[m Implementação dos Models
+[33mf27602c[m criados os primeiros arquivos da pasta source
+[33md98c43c[m criado o projeto e adicionadas as dependencias
