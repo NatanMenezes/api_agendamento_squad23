@@ -46,11 +46,11 @@ if (isset($_POST["emails"]) && isset($_POST["funcionario"]) && isset($_POST["dat
         $mail->AltBody = ($funcionario . 'convidou você para ir ao escritório');
 
         if ($mail->send()) {
-            echo 'Email enviado com sucesso';
+            echo json_encode(["status"=>true,"message"=>'Email enviado com sucesso']);
         } else {
-            echo 'Email nao enviado';
+            echo json_encode(["status"=>false,"message"=>'Email nao enviado']);
         }
     } catch (Exception $e) {
-        echo "Erro ao enviar mensagem: {$mail->ErrorInfo}";
+        echo json_encode(["status"=>false,"message"=>"Erro ao enviar mensagem: {$mail->ErrorInfo}"]);
     }
 }

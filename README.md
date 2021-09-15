@@ -19,6 +19,7 @@
     * [Mudar Capacidade](#mudar-capacidade)
     * [Ver Regulamento COVID](#ver-regulamento)
     * [Mudar Regulamento COVID](#mudar-regulamento)
+  * [Envio de convites por email](#convites)
 * [Tecnologias utilizadas](#tecnologias)
 
 <h1 id="Sobre">Sobre</h1>
@@ -223,3 +224,32 @@
         "message": "Regulamento alterado com sucesso",
         "regulamento": "50"
     }
+
+<h2>Envio de convites por email</h2>
+<p>Para enviar convites por email, basta acessar a rota /Email e enviar os seguintes dados via post: </p>
+
+    "emails": "ex@example.com,ex2@example.com"
+    "funcionario": "Nome Remetente"
+    "data": "18/10/2021"
+    "turno": "Tarde"
+
+<p>A lista de emails precisa ser uma string, que usará a "," para delimitar os emails. Não devem haver espaços na string da lista dos emails.</p>
+
+<p>O retorno para essa requisição, em caso de sucesso, será: </p>
+
+    {
+      "status": true,
+      "message": "Email enviado com sucesso"
+    }
+
+<p>Caso haja algum erro, será retornado o status false e uma mensagem com o erro.</p>
+
+<h1 id="tecnologias">Tecnologias utilizadas</h1>
+
+<ul>
+    <li>PHP</li>
+    <li>MySql</li>
+    <li>PHP Mailer</li>
+    <li>HTML</li>
+    <li>CSS</li>
+</ul>
