@@ -120,7 +120,7 @@
                     <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
                       <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Oi, Consultor(a)</p>
                       <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Você recebeu um convite para trabalhar com %funcionario%. </p>
-                      <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Data: %data% <br><br> Você gostaria de ir? </p>
+                      <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Data: %data%<br> Turno: %turno%<br>Você gostaria de ir? </p>
                       <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
                         <tbody>
                           <tr>
