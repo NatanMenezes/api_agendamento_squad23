@@ -1,0 +1,741 @@
+{
+  "info": {
+    "name": "Agendamento Sistema",
+    "_postman_id": "46ec27c8-740d-4835-9282-99fe42644424",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "1ad8b2e6-3717-41b2-85d1-67586e1a0dac",
+      "name": "Envio de emails",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "Email"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "emails",
+              "value": "natanmenezes31@gmail.com,stefaniojr@live.com",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "funcionario",
+              "value": "Natã Menezes",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "data",
+              "value": "16/10/2021",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "turno",
+              "value": "Tarde",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            }
+          ],
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "334e81a9-7efa-4f15-a36a-7a32c2c4c505"
+        }
+      ]
+    },
+    {
+      "id": "ec71f3a1-c420-4b63-8870-2cfad96fbef4",
+      "name": "Ver Regulamento",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "admin/regulamento"
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "f26b74a7-24a0-4b99-95ef-0bb62330c592"
+        }
+      ]
+    },
+    {
+      "id": "2c6066ce-f38b-4540-8e16-ddcdfc1d613e",
+      "name": "Delete Funcionario",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "funcionarios/delete"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id",
+              "value": "4",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            }
+          ],
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "44846db3-c17c-4e7a-acf7-be107a812efa"
+        }
+      ]
+    },
+    {
+      "id": "73c704cd-1700-413d-80b2-38373eea1b52",
+      "name": "Novo Funcionario",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "funcionarios/novo"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "nome",
+              "value": "Wagner Souza",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "email",
+              "value": "wswagner2354@gmail.com",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "senha",
+              "value": "SenhaForte",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "admin",
+              "value": "0",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            }
+          ],
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "8f351044-7b95-4c98-aa7e-801872fa9f13"
+        }
+      ]
+    },
+    {
+      "id": "2d11c58d-6135-4b08-9ba5-dd6c458ef5b7",
+      "name": "Mudar Capacidade",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "admin/capacidade"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "estacao",
+              "value": "Santos",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "capacidade",
+              "value": "100",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            }
+          ],
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "67f5e3ec-819e-4de2-9b63-32aea4eda6de"
+        }
+      ]
+    },
+    {
+      "id": "644bd68a-77c4-4071-863a-54123b122029",
+      "name": "Ver Capacidade",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "admin/capacidade"
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "6344fec4-fc86-4ec5-ad7a-ee14b03c69e4"
+        }
+      ]
+    },
+    {
+      "id": "1de61703-49c4-4ec8-99cd-7a2103d30527",
+      "name": "Filtro Calendario",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "Calendario/Filtro"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "estacao",
+              "value": "SP",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "data",
+              "value": "24/09/2021",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            }
+          ],
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "d7ad3d10-bfa2-4ba2-bff5-0ae503d7ebae"
+        }
+      ]
+    },
+    {
+      "id": "a4dbf6df-2d1e-48bf-8e68-8524087a1bc3",
+      "name": "Calendario",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "Calendario/"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "d792565e-5db6-49d4-b7d9-39263b7c18da"
+        }
+      ]
+    },
+    {
+      "id": "f08b3e30-e499-4d7f-8206-b91dae8825fb",
+      "name": "Mudar Regulamento",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "admin/regulamento"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "regulamento_novo",
+              "value": "30",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            }
+          ],
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "3b854dc4-a885-4737-84cd-4f2564be8e2d"
+        }
+      ]
+    },
+    {
+      "id": "5739ba14-ce11-4f75-a56b-58e5266e5614",
+      "name": "Delete Agendamento",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "agendamentos/delete"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id",
+              "value": "27",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            }
+          ],
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "fa2b1d91-db96-406d-b054-b07fbd4e53bd"
+        }
+      ]
+    },
+    {
+      "id": "ece8df57-c995-4ac7-989c-cf059925ab53",
+      "name": "Funcionarios",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "funcionarios/"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "8422dcf2-2360-4e2e-b517-49d83c447765"
+        }
+      ]
+    },
+    {
+      "id": "63b62721-95a4-464e-865a-03c1a9ed8256",
+      "name": "Ver Agendamentos",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "agendamentos"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id_funcionario",
+              "value": "9",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            }
+          ],
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "a88a68b9-c0b4-497e-a4ff-355124a80957"
+        }
+      ]
+    },
+    {
+      "id": "553611fc-9dbd-45a7-9d53-7f23639d94a8",
+      "name": "Login",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "login"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": "samurodrigues.fcamara@gmail.com",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "senha",
+              "value": "fcalendar",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            }
+          ],
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "37931835-1d3c-4fa4-95bf-9eedb4f7459c"
+        }
+      ]
+    },
+    {
+      "id": "a35c8516-ce83-4a87-aeb0-656b4d52ae3d",
+      "name": "Novo Agendamento",
+      "request": {
+        "url": {
+          "protocol": "https",
+          "host": "fcalendar.anagabatteli.com",
+          "path": [
+            "api",
+            "agendamentos/novo"
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id_funcionario",
+              "value": "8",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "data",
+              "value": "29/09/2021",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "turno",
+              "value": "T",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            },
+            {
+              "key": "local",
+              "value": "Santos",
+              "disabled": false,
+              "type": "text",
+              "description": ""
+            }
+          ],
+          "disabled": false
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "header": [],
+          "code": 200,
+          "name": "Response_200",
+          "id": "35b31ced-38c1-47b8-a8b6-fda604236445"
+        }
+      ]
+    }
+  ],
+  "variable": []
+}
