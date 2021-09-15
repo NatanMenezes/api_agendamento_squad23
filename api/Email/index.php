@@ -10,13 +10,21 @@ require_once("../../vendor/autoload.php");
 require '../../source/Controller/src/Exception.php';
 require '../../source/Controller/src/PHPMailer.php';
 require '../../source/Controller/src/SMTP.php';
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Credentials: true");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Max-Age: 1000');
+header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
+
 $email_template = file_get_contents('email_template.php');
 
-if (isset($_POST["emails"]) && isset($_POST["funcionario"]) && isset($_POST["data"])) {
+if (isset($_POST["emails"]) && isset($_POST["funcionario"]) && isset($_POST["data"]) && isset($_POST['turno'])) {
     $mail = new PHPMailer(true);
     // Substitui o % pela informação
     $email_template = str_replace('%funcionario%', $_POST["funcionario"], $email_template);
+    //$email_template = str_replace('%consultor%', $_POST["consultor"], $email_template);
     $email_template = str_replace('%data%', $_POST["data"], $email_template);
+    $email_template = str_replace('%turno%', $_POST["turno"], $email_template);
     try {
         foreach (Email::PegaEmail($_POST["emails"]) as $value2) {
             $mail->AddAddress($value2);
